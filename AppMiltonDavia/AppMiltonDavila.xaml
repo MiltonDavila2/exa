@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMiltonDavia.AppMiltonDavila"
+             Title="AppMiltonDavila">
+    <VerticalStackLayout>
+        <Label
+            Text="Ingrese su numero de telefono"/>
+
+        <Entry x:Name="PhoneNumberEntry" Placeholder="0856432100" Keyboard="Telephone"/>
+
+        <Label Text="Seleccione el operador"/>
+        <Picker x:Name="OperatorPicker" Title="">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Operador 1</x:String>
+                    <x:String>Operador 2</x:String>
+                    <x:String>Opersado 3</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Seleccione el valor de recarga:" />
+        <StackLayout>
+            <RadioButton x:Name="RadioButton3" GroupName="Recarga" Content="3" CheckedChanged="OnRechargeAmountChanged"/>
+            <RadioButton x:Name="RadioButton5" GroupName="Recarga" Content="5" IsChecked="True" CheckedChanged="OnRechargeAmountChanged"/>
+            <RadioButton x:Name="RadioButton10" GroupName="Recarga" Content="10" CheckedChanged="OnRechargeAmountChanged"/>
+        </StackLayout>
+
+        <Label x:Name="SelectedRechargeLabel" Text="Ha seleccionado una recarga de: 5 dólares" />
+        <Button Text="Recargar" Clicked="OnRecargarClicked" />
+    </VerticalStackLayout>
+</ContentPage>
